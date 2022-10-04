@@ -5,8 +5,8 @@ $senha = "";
 $bancodeDados = "av1daw";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $connection = new mysqli($servidor, $usuario, $senha, $bancodeDados);
-    if ($connection->connect_error) {
+    $conn= new mysqli($servidor, $usuario, $senha, $bancodeDados);
+    if ($conn->connect_error) {
         die("Conexao com o banco de dados falhou!!!");
     }
 }
@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="periodo">Digite o periodo da Disciplina: </label>
         <input type="text" name="periodo"><br>
 
-        <label for="preRequesito">Digite o pre-requisito: </label>
-        <input type="text" name="preRequesito"><br>
+        <label for="preRequisito">Digite o pre-requisito: </label>
+        <input type="text" name="preRequisito"><br>
 
         <label for="credito">Digite o credito necessário: </label>
         <input type="text" name="credito"><br>
@@ -54,14 +54,15 @@ if (isset($_POST["botaoCriar"])) {
 
     $nome = $_POST["nome"];
     $periodo = $_POST["periodo"];
-    $preRequesito = $_POST["preRequesito"];
+    $preRequisito = $_POST["preRequisito"];
     $credito = $_POST["credito"];
 
-    $inserirSQL = "INSERT INTO `disciplina`(`nome`, `periodo`, `idPreRequesito`, `creditos`) VALUES ('$nome','$periodo','$preRequesito','$credito')";
+    $sql = "INSERT INTO `disciplina`(`nome`, `periodo`, `idPreRequisito`, `creditos`) VALUES ('$nome','$periodo','$preRequisito','$credito')";
 
-    $result = $connection->query($inserirSQL);
-
-
+    $result = $conn->query($sql);
+    if(!$conn->query($sql)){
+        echo("Error Description: ". $conn->error);
+    }
     if ($result == true) {
         echo "<p>Disciplina Criada</p>";
     } else {
