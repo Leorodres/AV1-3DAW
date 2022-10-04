@@ -23,8 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div>
-    <div><a style="margin-right: 25px" href="./criarDisciplina.php">Criar Matricula</a> <a style="margin-right: 25px" href="./alterarDisciplina.php">Alterar Matrícula</a> <a style="margin-right: 25px" href="./apagarDisciplina.php">Apagar Matrícula</a> <a style="margin-right: 25px" href="./exibirDisciplina.php">Exibir</a><a style="margin-right: 25px" href="./exibirTodasDisciplinas.php">Exibir Todas</a></div>    </div>
-
+        <a style="margin-right: 25px" href="./criarDisciplina.php">Criar Disciplina</a> 
+        <a style="margin-right: 25px" href="./alterarDisciplina.php">Alterar Disciplina</a> 
+        <a style="margin-right: 25px" href="./apagarDisciplina.php">Apagar Disciplina</a> 
+        <a style="margin-right: 25px" href="./exibirDisciplina.php">Exibir</a>
+        <a style="margin-right: 25px" href="./exibirTodasDisciplinas.php">Exibir Todas</a>
+        <a style="margin-right: 25px" href="./usuarioArquivo.php">Inserir Usuário</a>
+    </div>
 <br>
     <form action="apagarDisciplina.php" method="POST">
 

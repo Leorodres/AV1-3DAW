@@ -30,29 +30,40 @@ if ($resposta = mysqli_query($conn, $sql)) {
 
     <body>
         <div>
-        <div><a style="margin-right: 25px" href="./criarDisciplina.php">Criar Matricula</a> <a style="margin-right: 25px" href="./alterarDisciplina.php">Alterar Matrícula</a> <a style="margin-right: 25px" href="./apagarDisciplina.php">Apagar Matrícula</a> <a style="margin-right: 25px" href="./exibirDisciplina.php">Exibir</a><a style="margin-right: 25px" href="./exibirTodasDisciplinas.php">Exibir Todas</a></div>    </div>
-
+            <a style="margin-right: 25px" href="./criarDisciplina.php">Criar Disciplina</a> 
+            <a style="margin-right: 25px" href="./alterarDisciplina.php">Alterar Disciplina</a> 
+            <a style="margin-right: 25px" href="./apagarDisciplina.php">Apagar Disciplina</a> 
+            <a style="margin-right: 25px" href="./exibirDisciplina.php">Exibir</a>
+            <a style="margin-right: 25px" href="./exibirTodasDisciplinas.php">Exibir Todas</a>
+            <a style="margin-right: 25px" href="./usuarioArquivo.php">Inserir Usuário</a>
+        </div>
         <br>
         <form action="exibirTodasDisciplinas.php" method="POST">
 
             <table>
                 <tr>
-                    <td>Matricula</td>
-                    <td>Nome</td>
-                    <td>Email</td>
+                    <td>Nome da disciplina</td>
+                    <td>Id Da disciplina</td>
+                    <td>Id do pre-requisito</td>
+                    <td>Periodo</td>
+                    <td>Credito</td>
                 </tr>
             </tr>
             <?php
             if($boolTest==true){
                 while ($row = mysqli_fetch_row($resposta)) { 
 
-                    $matExib = $row[0];
-                    $nomeExib = $row[1];
-                    $emailExib = $row[2];
-            
-                    echo "<tr><td>$matExib</td>
-                    <td>$nomeExib</td>
-                    <td>$emailExib</td> </tr>";
+                    $nome = $row[0];
+                    $id = $row[1];
+                    $periodo = $row[2];
+                    $idPreRequisito = $row[3];
+                    $creditos = $row[4];
+                
+                    echo "<tr><td>$nome</td>
+                    <td>$id</td>
+                    <td>$periodo</td>
+                    <td>$idPreRequisito</td>
+                    <td>$creditos</td> </tr>";
                 }
             }
             ?>

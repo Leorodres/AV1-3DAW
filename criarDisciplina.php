@@ -22,7 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div>
-    <div><a style="margin-right: 25px" href="./criarDisciplina.php">Criar Matricula</a> <a style="margin-right: 25px" href="./alterarDisciplina.php">Alterar Matrícula</a> <a style="margin-right: 25px" href="./apagarDisciplina.php">Apagar Matrícula</a> <a style="margin-right: 25px" href="./exibirDisciplina.php">Exibir</a><a style="margin-right: 25px" href="./exibirTodasDisciplinas.php">Exibir Todas</a></div>    </div>
+        <a style="margin-right: 25px" href="./criarDisciplina.php">Criar Disciplina</a> 
+        <a style="margin-right: 25px" href="./alterarDisciplina.php">Alterar Disciplina</a> 
+        <a style="margin-right: 25px" href="./apagarDisciplina.php">Apagar Disciplina</a> 
+        <a style="margin-right: 25px" href="./exibirDisciplina.php">Exibir</a>
+        <a style="margin-right: 25px" href="./exibirTodasDisciplinas.php">Exibir Todas</a>
+        <a style="margin-right: 25px" href="./usuarioArquivo.php">Inserir Usuário</a>
     </div>
 
     <br>
@@ -60,9 +65,7 @@ if (isset($_POST["botaoCriar"])) {
     $sql = "INSERT INTO `disciplina`(`nome`, `periodo`, `idPreRequisito`, `creditos`) VALUES ('$nome','$periodo','$preRequisito','$credito')";
 
     $result = $conn->query($sql);
-    if(!$conn->query($sql)){
-        echo("Error Description: ". $conn->error);
-    }
+    
     if ($result == true) {
         echo "<p>Disciplina Criada</p>";
     } else {

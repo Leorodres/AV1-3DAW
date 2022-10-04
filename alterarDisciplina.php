@@ -53,6 +53,15 @@
         <title>Alterar AV1</title>
     </head>
     <body>
+        <div>
+            <a style="margin-right: 25px" href="./criarDisciplina.php">Criar Disciplina</a> 
+            <a style="margin-right: 25px" href="./alterarDisciplina.php">Alterar Disciplina</a> 
+            <a style="margin-right: 25px" href="./apagarDisciplina.php">Apagar Disciplina</a> 
+            <a style="margin-right: 25px" href="./exibirDisciplina.php">Exibir</a>
+            <a style="margin-right: 25px" href="./exibirTodasDisciplinas.php">Exibir Todas</a>
+            <a style="margin-right: 25px" href="./usuarioArquivo.php">Inserir Usuário</a>
+        </div>
+
         <form action="alterarDisciplina.php" method="POST" class="formulario">
             <label for="idDiscip">Id da disciplina ser alterado:</label><br>
             <input type="text" name="idDiscip"><br>
